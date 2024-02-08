@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <!-- ! Swiper images -->
+    <div class="swiper" id="images">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide swiper-slideImage"></div>
+        <div class="swiper-slide swiper-slideImage"></div>
+        <div class="swiper-slide swiper-slideImage"></div>
+        <div class="swiper-slide swiper-slideImage"></div>
+        <div class="swiper-slide swiper-slideImage"></div>
+        <div class="swiper-slide swiper-slideImage"></div>
+        <div class="swiper-slide swiper-slideImage"></div>
+        <div class="swiper-slide swiper-slideImage"></div>
+      </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+
+    <!-- ! Swiper videos -->
+    <div class="bg" id="bg">
+      <div class="closeBtn-container" id="closeBtn">
+        <div class="closeBtn">
+          <div class="line-before"></div>
+          <div class="line-after"></div>
+        </div>
+      </div>
+      <div class="swiper videos" id="videos">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <iframe
+              src="https://player.vimeo.com/video/824804225?background=1"
+              width="500"
+              height="500"
+              frameborder="0"
+              webkitallowfullscreen
+              mozallowfullscreen
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="swiper-slide">
+            <iframe
+              src="https://player.vimeo.com/video/824804225?background=1"
+              width="500"
+              height="500"
+              frameborder="0"
+              webkitallowfullscreen
+              mozallowfullscreen
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="swiper-slide">
+            <iframe
+              src="https://player.vimeo.com/video/824804225?background=1"
+              width="500"
+              height="500"
+              frameborder="0"
+              webkitallowfullscreen
+              mozallowfullscreen
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="swiper-slide">
+            <iframe
+              src="https://player.vimeo.com/video/824804225?background=1"
+              width="500"
+              height="500"
+              frameborder="0"
+              webkitallowfullscreen
+              mozallowfullscreen
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="swiper-slide">
+            <iframe
+              src="https://player.vimeo.com/video/824804225?background=1"
+              width="500"
+              height="500"
+              frameborder="0"
+              webkitallowfullscreen
+              mozallowfullscreen
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="swiper-slide">
+            <iframe
+              src="https://player.vimeo.com/video/824804225?background=1"
+              width="500"
+              height="500"
+              frameborder="0"
+              webkitallowfullscreen
+              mozallowfullscreen
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="swiper-slide">
+            <iframe
+              src="https://player.vimeo.com/video/824804225?background=1"
+              width="500"
+              height="500"
+              frameborder="0"
+              webkitallowfullscreen
+              mozallowfullscreen
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="swiper-slide">
+            <iframe
+              src="https://player.vimeo.com/video/824804225?background=1"
+              width="500"
+              height="500"
+              frameborder="0"
+              webkitallowfullscreen
+              mozallowfullscreen
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+        <div class="swiper-pagination pagination-visible"></div>
+      </div>
+    </div>
+
+    <!-- ! Scripts -->
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const slides = [
+          ...document.getElementsByClassName('swiper-slideImage'),
+        ];
+        const bg = document.getElementById('bg');
+        const videos = document.getElementById('videos');
+        const closeBtn = document.getElementById('closeBtn');
+
+        slides.forEach((slide) => {
+          slide.addEventListener('click', () => {
+            bg.classList.add('visible');
+            videos.classList.add('block');
+            closeBtn.classList.add('on');
+          });
+        });
+
+        closeBtn.addEventListener('click', () => {
+          bg.className = 'bg';
+          videos.className = 'videos';
+          closeBtn.className = 'closeBtn-container';
+        });
+
+        const swiper = new Swiper('#images', {
+          slidesPerView: 4,
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+
+        const swiperVideos = new Swiper('#videos', {
+          slidesPerView: 1,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
