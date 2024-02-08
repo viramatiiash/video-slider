@@ -6,12 +6,24 @@
 
 .swiper {
   width: 100%;
-  height: 400px;
+  height: 450px;
+
+  @media screen and (min-width: 1250px) and (max-width: 1500px) {
+    height: 350px;
+  }
+
+    @media screen and (min-width: 1050px) and (max-width: 1250px) {
+    height: 300px;
+  }
+
+      @media screen and (min-width: 850px) and (max-width: 1050px) {
+    height: 250px;
+  }
 }
 
-.swiper-container {
+/* .swiper-container {
   height: 500px;
-}
+} */
 
 .swiper-slide {
   background-image: url('https://i.vimeocdn.com/video/1666894951-d3fc47ae1d5f09250c468b79e4063afa7142163b5734eacb2277ea28acd44b52-d?mw=1000&mh=1000');
